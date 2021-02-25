@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lbee.honey.sys.mapper.UserMapper">
+
+
+  <sql id="Base_Column_List">
+      a.id AS id,
+      a.username AS username,
+      a.mobile AS mobile,
+      a.email AS email,
+      a.password AS password,
+      a.password_exist AS passwordExist,
+      a.pwd_expire_at AS pwdExpireAt,
+      a.enabled AS enabled,
+      a.locked AS locked,
+      a.nickname AS nickname,
+      a.avatar AS avatar,
+      a.tenant_id AS tenantId,
+      a.del_flag AS delFlag,
+      a.create_by AS createBy,
+      a.create_date AS createDate,
+      a.update_by AS updateBy,
+      a.update_date AS updateDate,
+      a.remarks AS remarks
+  </sql>
+</mapper>
+

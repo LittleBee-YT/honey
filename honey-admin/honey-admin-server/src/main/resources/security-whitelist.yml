@@ -1,0 +1,9 @@
+security:
+  whiteList:
+    - GET/v2/api-docs
+    - /swagger-ui.html/**
+    - /swagger-resources/**
+    - /webjars/springfox-swagger-ui/**
+    - /user/**
+
+

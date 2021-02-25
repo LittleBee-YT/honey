@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: honey-auth
+  # Cloud
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+  # MySql
+  datasource:
+    url: jdbc:mysql://219.239.169.22:3306/test1?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+    username: root
+    password: DTG@1234.iss.com
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  flyway:
+    locations: classpath:/db/migration
+    baseline-on-migrate: true
+    table: flyway_schema_generator_auth
+
+  # Redis
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 5000
+
+# Log
+logging:
+  level:
+    root: info

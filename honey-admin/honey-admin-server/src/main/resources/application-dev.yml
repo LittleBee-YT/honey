@@ -1,0 +1,44 @@
+spring:
+  # MySql Config
+#  datasource:
+#    url: jdbc:mysql://10.16.132.248:3306/aiot?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+#    username: root
+#    password: 123456
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # MySql
+  datasource:
+    url: jdbc:mysql://219.239.169.22:3306/test1?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+    username: root
+    password: DTG@1234.iss.com
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  flyway:
+    locations: classpath:/db/migration
+    baseline-on-migrate: true
+    table: flyway_schema_generator
+
+elasticsearch:
+  address:
+    - es-cn-09k1wwi4v003t6cxk.public.elasticsearch.aliyuncs.com:9200
+    - es-cn-09k1wwi4v003t6cxk.public.elasticsearch.aliyuncs.com:9200
+  scheme: http
+  username: elastic
+  password: feitian72@123
+
+#Security Authorization
+auth-server: http://127.0.0.1:6099 # authorization服务地址
+
+security:
+  oauth2:
+    client:
+      client-id: user-client
+      client-secret: 123456
+      user-authorization-uri: ${auth-server}/oauth/authorize
+      access-token-uri: ${auth-server}/oauth/token
+    resource:
+      id: user-client
+      user-info-uri: user-info
+    authorization:
+      check-token-access: ${auth-server}/oauth/check_token
+

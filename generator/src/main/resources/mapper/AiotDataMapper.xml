@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lbee.generator.mapper.AiotDataMapper">
+
+
+    <!--查询所有菜单id-->
+    <select id="findAiotSysmMenuIdList" resultType="java.lang.String">
+        select a.id from sys_menu a
+    </select>
+
+    <!--查询可以给超级管理员分配的菜单及按钮-->
+    <select id="findAiotSysmMenuListAtSuperadmin" resultType="java.util.Map">
+        select * from sys_menu a where a.id='482D2EDE-9797-4BCA-84F6-18AECE4E71E2'
+        union all
+        select * from sys_menu a where a.id='3BC45CC7-3EC5-41F1-B300-786D8F938255'
+        union all
+        select * from sys_menu a where a.menu_name ='组织机构管理' and a.parent_menu_id='3BC45CC7-3EC5-41F1-B300-786D8F938255'
+        union all
+        select * from sys_menu a where a.menu_name ='角色管理' and a.parent_menu_id='3BC45CC7-3EC5-41F1-B300-786D8F938255'
+        union all
+        select * from sys_menu a where a.menu_name ='用户管理' and a.parent_menu_id='3BC45CC7-3EC5-41F1-B300-786D8F938255'
+        union all
+        select * from sys_menu a where a.menu_name ='菜单管理' and a.parent_menu_id='3BC45CC7-3EC5-41F1-B300-786D8F938255'
+        union all
+        select * from sys_menu a where a.menu_name ='组织机构管理' or a.parent_menu_id='8E6250F0-B495-4EED-969E-6286B4409CDA'
+        union all
+        select * from sys_menu a where a.menu_name ='角色管理' or a.parent_menu_id='97C17F27-3EB3-4B28-BE0F-15BB2A01D940'
+        union all
+        select * from sys_menu a where a.menu_name ='用户管理' or a.parent_menu_id='6371B4C7-5EF1-448D-A520-C4B863E2D311'
+        union all
+        select * from sys_menu a where a.menu_name ='菜单管理' or a.parent_menu_id='BF4F928B-77EB-40CD-9574-F09D763DFA1F'
+    </select>
+
+</mapper>

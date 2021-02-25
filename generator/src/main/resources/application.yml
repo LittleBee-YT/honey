@@ -1,0 +1,45 @@
+server:
+  port: 8088
+
+spring:
+  # MySql Config
+  datasource:
+#    url: jdbc:mysql://localhost:3306/test1?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+    url: jdbc:mysql://219.239.169.22:3306/test1?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+    username: root
+    password: DTG@1234.iss.com
+#    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# MyBatis-plus Config
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  typeAliasesPackage: com.lbee.generator.entity
+  global-config:
+    banner: false
+    db-config:
+      id-type: id_worker
+      field-strategy: not_empty
+      column-underline: true
+      #capital-mode: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+
+# Swagger Config
+swagger:
+  enabled: true
+  title: AIOT SYS doc
+  desc: AIOT SYS doc
+  version: v1.0
+  termsOfServiceUrl: NO terms of service
+  contact:
+    name: lbee
+    url:
+    email:
+
+#logging:
+#  level:
+#    root: debug

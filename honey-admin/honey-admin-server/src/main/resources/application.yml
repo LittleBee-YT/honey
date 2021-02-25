@@ -1,0 +1,43 @@
+server:
+  port: 8087
+#  servlet:
+#    context-path: /admin
+spring:
+  profiles:
+    active:  @profile.active@
+
+# MyBatis-plus Config
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*/*Mapper.xml
+  typeAliasesPackage: com.lbee.honey.*.entity
+  global-config:
+    banner: false
+    db-config:
+      id-type: id_worker
+      field-strategy: not_empty
+      column-underline: true
+      #capital-mode: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+
+feign:
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false
+
+## Swagger Config
+swagger:
+  enabled: true
+  title: AIOT SYS doc
+  desc: AIOT SYS doc
+  version: v1.0
+  termsOfServiceUrl: NO terms of service
+  contact:
+    name: Little bee
+    url: www.dsaf.sf
+    email: lbee@cd.com
